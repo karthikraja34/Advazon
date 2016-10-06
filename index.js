@@ -36,15 +36,15 @@ app.get("/user",function(req,res){
     res.render("login");
 });
 
-app.get("/service/:ser",function(req, res) {
-    var ser = req.params.ser;
-    Service.find({service_name : ser}, function(err,allServices){
+app.get("/service/:id",function(req, res) {
+    var serv = req.params.id;
+    Service.find({service_name : serv}, function(err,allServices){
         if(err){
             console.log(err);
         }
         else{
                res.render("service",{services:allServices});
-             console.log(req.params.ser);
+             
         }
     });
 
@@ -62,6 +62,9 @@ app.get("/works",function(req,res){
     res.render("how-it-works");
 });
 
+app.get("*",function(req, res) {
+    res.send("404 page not found");
+})
 
 app.listen(process.env.PORT,process.env.IP,function(){
     console.log("seerver is started");
