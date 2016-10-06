@@ -1,0 +1,23 @@
+#works {
+  background: url(../images/Rectangle-1.png);
+  min-height: 300px;
+  color: #fefefe;
+  vertical-align: middle; }
+  #works h2 {
+    margin-top: 10%; }
+
+#content h2, #content h4, #content h3 {
+  margin: 20px 0; }
+#content img {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+#content h2 {
+  margin-bottom: 40px; }
+
+#footer {
+  background-color: #534741;
+  padding: 60px 0;
+  text-align: center;
+  color: #fff; }
+
+/*# sourceMappingURL=works.css.map */

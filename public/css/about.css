@@ -1,0 +1,28 @@
+#about {
+  background: url(../images/Rectangle-1.png);
+  min-height: 300px;
+  color: #fefefe;
+  vertical-align: middle; }
+  #about h2 {
+    margin-top: 10%; }
+
+#content {
+  background: url(../images/Layer-1.png) 50% center no-repeat fixed;
+  background-size: cover;
+  padding: 50px 0; }
+  #content h3 {
+    border-bottom: 1px solid #030303;
+    padding-bottom: 10px;
+    text-align: center;
+    margin: 50px 0; }
+  #content p {
+    color: #030303;
+    line-height: 53px; }
+
+#footer {
+  padding: 60px 0;
+  background: #736357;
+  color: #fff;
+  text-align: center; }
+
+/*# sourceMappingURL=about.css.map */

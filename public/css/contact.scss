@@ -1,0 +1,55 @@
+body {
+  font-family: 'Montserrat', sans-serif; }
+
+#img{
+    background: url(../images/MergedLayers2.png);
+   min-height: 450px;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    margin-top: -100px;
+       background-attachment: fixed;                
+    background-repeat: no-repeat;
+}
+#footimg{
+    background:url(../images/iconmonstr-paper-plane-3-240.png) 50% no-repeat;
+    height: 231px;
+    position: relative;
+    left: -500px;
+}
+
+hr {
+  width: 20%;
+  border-top: 2px solid #ddd;
+  margin-bottom: 40px; }
+
+.prpl{
+    color:#800080;
+}
+
+input.form-control,textarea.form-control{
+    border-radius: 0px;
+    padding: 20px;
+    border:2px solid #b4cbc7;
+    margin: 30px 0;
+}
+.btn-large{
+    border-radius: 0px;
+    padding: 15px 30px;
+    background-color: #a3b7b3;
+    color: #fff;
+    transition: all 0.8s;
+    span{
+        margin-left: 5px;
+    }
+    &:hover,:focus{
+         background-color: darken(#a3b7b3,50%);
+        color: #fff;
+    }
+    
+}
+
+footer{
+    padding: 50px;
+}
