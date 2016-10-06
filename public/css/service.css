@@ -1,0 +1,13 @@
+.boxLayout{
+    border : 1px solid #800080;
+    margin: 80px;
+    padding: 20px;
+}
+
+.boxLayout .description {
+    padding: 20px;
+}
+
+.content .btn{
+    margin-left: 20px;
+}

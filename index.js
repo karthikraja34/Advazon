@@ -37,8 +37,17 @@ app.get("/user",function(req,res){
 });
 
 app.get("/service/:ser",function(req, res) {
-   res.render("service");
-   console.log(req.params.ser);
+    var ser = req.params.ser;
+    Service.find({service_name : ser}, function(err,allServices){
+        if(err){
+            console.log(err);
+        }
+        else{
+               res.render("service",{services:allServices});
+             console.log(req.params.ser);
+        }
+    });
+
 });
 
 app.get("/about",function(req,res){
