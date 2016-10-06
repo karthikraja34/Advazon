@@ -13,6 +13,22 @@ app.get("/",function(req,res){
     res.render("home");
 });
 
+app.get("/user",function(req,res){
+    res.render("login");
+});
+
+app.get("/about",function(req,res){
+    res.render("about");
+});
+
+app.get("/contact",function(req,res){
+    res.render("contact");
+});
+
+app.get("/works",function(req,res){
+    res.render("how-it-works");
+});
+
 
 app.listen(process.env.PORT,process.env.IP,function(){
     console.log("seerver is started");
