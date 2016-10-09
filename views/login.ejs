@@ -20,18 +20,28 @@
       <div class="contentWrapper">
         <div class="content ">
           <div class="page" id="tab1" style="display:block;">
+           <form action="/login" method="post">
            <div class="form-group text-center">
+                <!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
               
-               <input class="form-control" type="email" placeholder="Your Email*">
-                <input class="form-control" type="password" placeholder="Your Password*">
+               <input class="form-control" name="phone" type="text" placeholder="Your mobile number*">
+                <input class="form-control" name="password" type="password" placeholder="Your Password*">
              
-               <a href="" class="btn btn-primary btn-large text-center">Log In</a>
+               <button type="submit" class="btn btn-primary btn-large text-center">Log in</a>
               
            </div>
+           </form>
           </div>
           <div class="page" id="tab2" style="display:none;">
            <form action="/register" method="post">
            <div class="form-group text-center">
+               <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
               <input class="form-control" name="name" type="text" placeholder="Your Name*">
                <input class="form-control" name="email" type="email" placeholder="Your Email*">
                 <input class="form-control" name="password" type="password" placeholder="Your Password*">

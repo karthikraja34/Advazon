@@ -5,11 +5,17 @@ var express        = require("express"),
     Service        = require("./models/bookings"),
     bodyParser     = require("body-parser"),
     mongoose       = require("mongoose"),
-    User           = require("./models/user");
+    User           = require("./models/user"),
+    flash          = require('connect-flash'),
+    morgan         = require('morgan'),
+    cookieParser   = require('cookie-parser')
 
+require('./config/passport')(passport);
 mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb://localhost/adv");
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
@@ -23,9 +29,8 @@ app.use(require("express-session")({
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStratergy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+app.use(flash()); // use connect-flash for flash messages stored in session
+
 
 
 // Service.create({
@@ -80,23 +85,39 @@ app.get("/works",function(req,res){
 // ==========
 // AUTH ROUTES
 // ==========
-app.get("/register",function(req,res){
-    res.render("login");
-});
-app.post("/register",function(req,res){
-   var newUser = new User({username: req.body.name , email : req.body.email , phone : req.body.phone});
-   User.register(newUser,req.body.password,function(err,user){
-       if(err){
-           console.log(err);
-           return res.render("login");
-       }
-       passport.authenticate("local")(req,res,function(){
-           res.redirect("/");
-       });
-       
-   });
+app.get("/login",function(req,res){
+    res.render("login",{ message: req.flash('loginMessage')});
 });
 
+app.get("/register",function(req,res){
+    res.render("login",{ message: req.flash('signupMessage')});
+});
+
+app.post('/register', passport.authenticate('local-signup', {
+        successRedirect : '/', // redirect to the secure profile section
+        failureRedirect : '/register', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+    }));
+app.post('/login', passport.authenticate('local-login', {
+        successRedirect : '/', // redirect to the secure profile section
+        failureRedirect : '/register', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+        }));
+
+ app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+    // route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on 
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/register');
+}
 app.get("*",function(req, res) {
     res.send("404 page not found");
 });
