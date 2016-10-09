@@ -80,7 +80,9 @@ app.get("/works",function(req,res){
     res.render("how-it-works");
 });
 
-
+app.get("/booking",isLoggedIn,function(req, res) {
+    res.render("booking");
+});
 
 // ==========
 // AUTH ROUTES
