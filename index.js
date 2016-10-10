@@ -55,10 +55,12 @@ app.get("/", function(req, res) {
 
 app.get("/service/:id", function(req, res) {
     var serv = req.params.id;
+
     Service.find({ service_name: serv }, function(err, allServices) {
         if (err) {
             console.log(err);
         } else {
+
             res.render("service", { services: allServices });
 
         }
@@ -78,8 +80,19 @@ app.get("/works", function(req, res) {
     res.render("how-it-works");
 });
 
-app.get("/booking/:name", isLoggedIn, function(req, res) {
-    res.render("booking");
+app.get("/booking/:ser", isLoggedIn, function(req, res) {
+    var ser_name = req.params.ser
+    Service.find({ name: ser_name }, function(err, allServices) {
+        if (err) {
+            console.log(err);
+        } else {
+            service = allServices.name;
+            res.render("booking", { service: req.params.ser });
+
+        }
+
+    });
+
 });
 
 // ==========
@@ -118,6 +131,9 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/register');
 }
+app.get('/admin', function(req, res) {
+    res.render("admin");
+});
 app.get("*", function(req, res) {
     res.send("404 page not found");
 });

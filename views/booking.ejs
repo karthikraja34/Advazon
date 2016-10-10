@@ -1,14 +1,20 @@
 <% include partials/header %>
 
+
+<% var services = service; %>
+
   <div id="booking">
       <div class="container">
           <div class="row text-center">
               <div class="form-group text-center">
-              <input class="form-control" type="text" placeholder="Your Name*">
-                  <textarea class="form-control" placeholder="Your Address*"></textarea>
-             <input class="form-control" type="text" placeholder="Your Mobile no*">
-               <input type="text" class="datepicker form-control" placeholder="Select Date">
-               <a href="" class="btn btn-primary btn-large text-center">Register</a>
+              <form action="booking" method="post">
+              <input class="form-control" type="text" name="name" placeholder="Your Name*">
+                  <textarea id="textarea" rows=5 class="form-control" name="address" placeholder="Your Address*"></textarea>
+             <input class="form-control" type="text" name="phone" placeholder="Your Mobile no*">
+             <input class="form-control read-only" type="text" name="service-name" value="<%= service %>" disabled>
+               <input type="text" class="datepicker form-control" name="date" placeholder="Select Date">
+               <button type="submit" class="btn btn-primary btn-large text-center">Register</button>
+              </form>
               
            </div>
           </div>

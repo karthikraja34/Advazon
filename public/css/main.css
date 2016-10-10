@@ -40,7 +40,12 @@ span>#logo img {
     color: #c03b41;
 }
 
-input.form-control {
+#textarea {
+    border: 3px solid #998675;
+}
+
+input.form-control,
+textarea {
     margin-top: 50px;
     border-radius: 0px;
     padding: 20px;
@@ -152,8 +157,7 @@ hr {
 
 #footer a:hover,
 #footer a :focus {
-    color: #f4c368;
-    color: #eeeaea;
+    color: #b300b3;
 }
 
 #footer h4 {

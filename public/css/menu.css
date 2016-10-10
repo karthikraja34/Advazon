@@ -62,11 +62,12 @@
 
 li {
     list-style: none;
-    padding: 14px 0;
+    padding: 15px 0;
     transition: background-color 0.2s;
 }
 
 li:hover {
+    text-decoration: none;
     transition: background-color 0.2s;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.2);
