@@ -41,15 +41,15 @@ span>#logo img {
 }
 
 #textarea {
-    border: 3px solid #998675;
+    border: 1px solid #998675;
 }
 
 input.form-control,
 textarea {
-    margin-top: 50px;
+    margin-top: 30px;
     border-radius: 0px;
-    padding: 20px;
-    border: 3px solid #998675;
+    padding: 15px;
+    border: 1px solid #998675;
     color: #f4c368;
 }
 

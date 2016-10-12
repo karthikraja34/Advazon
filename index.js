@@ -8,14 +8,17 @@ var express = require("express"),
     User = require("./models/user"),
     flash = require('connect-flash'),
     morgan = require('morgan'),
-    cookieParser = require('cookie-parser')
-
+    cookieParser = require('cookie-parser'),
+    methoodOverride = require('method-override')
 require('./config/passport')(passport);
 mongoose.Promise = global.Promise;
+
+
 
 mongoose.connect("mongodb://localhost/adv");
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser());
+app.use(methoodOverride("_method"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -92,6 +95,11 @@ app.get("/booking/:ser", isLoggedIn, function(req, res) {
         }
 
     });
+
+});
+
+app.put("/booking", function(req, res) {
+    res.render("orders");
 
 });
 

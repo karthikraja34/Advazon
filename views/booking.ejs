@@ -7,13 +7,14 @@
       <div class="container">
           <div class="row text-center">
               <div class="form-group text-center">
-              <form action="booking" method="post">
+           
+              <form action="/booking?_method=PUT" method="post">
               <input class="form-control" type="text" name="name" placeholder="Your Name*">
                   <textarea id="textarea" rows=5 class="form-control" name="address" placeholder="Your Address*"></textarea>
              <input class="form-control" type="text" name="phone" placeholder="Your Mobile no*">
-             <input class="form-control read-only" type="text" name="service-name" value="<%= service %>" disabled>
+             <input class="form-control" type="text" name="service-name" value="<%= service %>" disabled>
                <input type="text" class="datepicker form-control" name="date" placeholder="Select Date">
-               <button type="submit" class="btn btn-primary btn-large text-center">Register</button>
+               <button type="submit" class="btn btn-primary btn-large text-center">Submit</button>
               </form>
               
            </div>
@@ -23,6 +24,7 @@
   
 <% include partials/footer %>   
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
        
 
         <script type="text/javascript">
