@@ -38,7 +38,7 @@ app.use(express.static(__dirname + "/public"));
 // passport needs ability to serialize and unserialize users out of session
 app.use(cookieParser());
 app.use(session({
-    secret: 'cookie_secret',
+    secret: 'cookie_secret is this',
     name: 'cookie_name',
     proxy: true,
     resave: true,
@@ -210,6 +210,6 @@ app.get('/advazon/admin', function(req, res) {
 app.get("*", function(req, res) {
     res.send("404 page not found");
 });
-app.listen(3000, "localhost", function() {
+app.listen(process.env.PORT,process.env.IP, function() {
     console.log("seerver is started");
 });
