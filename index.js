@@ -19,7 +19,8 @@ mongoose.Promise = global.Promise;
 
 
 
-mongoose.connect("mongodb://localhost/adv");
+// mongoose.connect("mongodb://localhost/adv");
+mongoose.connect("mongodb://karthik:advazon@ds057066.mlab.com:57066/adv");
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser());
 app.use(methoodOverride("_method"));
