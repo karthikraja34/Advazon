@@ -13,6 +13,16 @@
     <th>Address</th>
     <th>Service</th>
   </tr>  
+   <% bookings.forEach(function(booking){ var i=0; %>
+   <tr>
+   <td><%= i++ %> </td>
+   <td><%= booking.name %></td>
+   <td><%= booking.phone %></td>
+   <td><%= booking.date %></td>
+   <td><%= booking.address %></td>
+   <td><%= booking.service %></td>
+                
+             <% }); %>
 </table>
 </div>
 </div>

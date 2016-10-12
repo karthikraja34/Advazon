@@ -30,6 +30,15 @@
         </div>
         </div>
 
+<% if (username) { %>
+<p>Hello <%= username.local.name %></p>
+<% }else{ %>
+<p>Hello Guest Please <a href="/login">Log in </a>or<a href="/register"> Sign up </a></p?
+<% } %>
+  
+  
+    <p>Please <a href='/users/login'>Log In</a></p>
+  
           
         <div id="services">
             <div class="container text-center">

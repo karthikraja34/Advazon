@@ -2,14 +2,18 @@ var express = require("express"),
     app = express(),
     passport = require("passport"),
     LocalStratergy = require("passport-local").Strategy,
-    Service = require("./models/bookings"),
+    Service = require("./models/service"),
+    Booking = require("./models/booking"),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
     User = require("./models/user"),
     flash = require('connect-flash'),
     morgan = require('morgan'),
     cookieParser = require('cookie-parser'),
-    methoodOverride = require('method-override')
+    methoodOverride = require('method-override'),
+    session = require('express-session')
+
+
 require('./config/passport')(passport);
 mongoose.Promise = global.Promise;
 
@@ -23,12 +27,43 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
-//  Passport configuration
-app.use(require("express-session")({
-    secret: "advazon key for encription",
-    resave: false,
-    saveUninitialized: false
+
+
+
+
+// =========================================================================
+// passport session setup ==================================================
+// =========================================================================
+// required for persistent login sessions
+// passport needs ability to serialize and unserialize users out of session
+app.use(cookieParser());
+app.use(session({
+    secret: 'cookie_secret',
+    name: 'cookie_name',
+    proxy: true,
+    resave: true,
+    saveUninitialized: true
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
+
+
+
+
+
+
+
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -36,21 +71,23 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 
-// Service.create({
-//     service_name: "AC service",
-//     name: "Ac cleaning service",
-//     image: "https://farm3.staticflickr.com/2701/5863039220_7ca55f1429.jpg",
-//     description: "Awesome AC cleaning service"
+// Booking.create({
+//     name: "name",
+//     phone: "phone",
+//     address: "address",
+//     date: "date",
+//     service: "service"
 // }, function(err, service) {
 //     if (err) {
 //         console.log(err);
 //     } else {
-//         console.log("Service created");
+//         console.log("Booking created");
 //     }
 // });
 
 app.get("/", function(req, res) {
-    res.render("home");
+    res.render("home", { username: req.user });
+    console.log(req.user);
 
 
 });
@@ -98,8 +135,26 @@ app.get("/booking/:ser", isLoggedIn, function(req, res) {
 
 });
 
-app.put("/booking", function(req, res) {
-    res.render("orders");
+app.post("/booking", isLoggedIn, function(req, res) {
+    name = req.body.name;
+    address = req.body.address;
+    phone = req.body.phone;
+    date = req.body.date;
+    service = req.body.service_name;
+    console.log(name, address, phone, date, service);
+    var booking = new Booking({
+        name: name,
+        phone: phone,
+        address: address,
+        date: date,
+        service: service
+    });
+    booking.save(function(err, booking) {
+        if (err) return console.error(err);
+        console.dir(booking);
+    });
+    console.log(Booking.find());
+    res.render("home", { username: req.user });
 
 });
 
@@ -139,8 +194,18 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/register');
 }
-app.get('/admin', function(req, res) {
-    res.render("admin");
+app.get('/advazon/admin', function(req, res) {
+
+    Booking.find({}, function(err, allBooking) {
+        if (err) {
+            console.log(err);
+        } else {
+
+            res.render("admin", { bookings: allBooking });
+
+        }
+    });
+
 });
 app.get("*", function(req, res) {
     res.send("404 page not found");
