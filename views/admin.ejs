@@ -1,0 +1,31 @@
+<% include partials/header %>
+<br/><br/><br/><br/>
+<div id="table">
+
+<div class="container">
+
+<table class="table">
+  <tr>
+    <th>S.no</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Date</th>
+    <th>Address</th>
+    <th>Service</th>
+  </tr>  
+   <% bookings.forEach(function(booking){ var i=0; %>
+   <tr>
+   <td><%= i++ %> </td>
+   <td><%= booking.name %></td>
+   <td><%= booking.phone %></td>
+   <td><%= booking.date %></td>
+   <td><%= booking.address %></td>
+   <td><%= booking.service %></td>
+                
+             <% }); %>
+</table>
+</div>
+</div>
+
+<br/><br/><br/>
+<% include partials/footer %>

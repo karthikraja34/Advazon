@@ -1,57 +1,4 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" >
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/menu.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        
-        <!--NAVBAR -->
-        
-    <nav class="navbar navbar-fixed-top" role="navigation">
-      <nav class="navigation-drawer">
-    <button id="menu" class="nav-btn">
-      <span class="hamburger"></span>
-    </button>
-    
-    <ul>
-      <li><a href="">item</a></li>
-      <li><a href="">item</a></li>
-      <li><a href="">item</a></li>
-      <li><a href="">item</a></li>
-      <li><a href="">item</a></li>
-    </ul>
-  </nav>
-  <div class="container">
-   <span id="logo"><img src="images/LOGO.png"></span>
-        </div>
-    </nav>
-
+<% include partials/header %>
    
    <!-- PARALLAX SCROLLING -->
    
@@ -61,57 +8,71 @@
        <div class="container text-center">
           
           <div class="row text-center">
-             <div class="form-group col-md-offset-2 co-md-4 col-sm-offset-2 col-sm-8">
-              <input class="form-control" type="text" placeholder="Select services">
-              </div>
-              <div class="col-md-2">
-                  
-              </div>
-          </div>
-          <a href="" class="btn btn-primary btn-large text-center">Book Now</a>
+             <div class=" col-md-offset-2 co-md-4 col-sm-offset-2 col-sm-8">
+
+   <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Select the Service
+    <span class="caret-up"></span>
+  </button>
+  <ul class="dropdown-menu  col-md-offset-2 co-md-4 col-sm-offset-2 col-sm-8" aria-labelledby="dropdownMenu1">
+    <li><a href="/service/AC service">Ac service</a></li>
+    <li><a href="#">Cleaning</a></li>
+    <li><a href="#">Taxi</a></li>
+  </ul>
+</div><br/><br/>
           <h2>OR</h2>
            <h3>GIVE US A <strong>MISSED CALL</strong></h3>
            <h3>987654321</h3>
-           
+           </div>
        </div>
    </div>
         </div>
-        
+        </div>
+
+
+  
+          
         <div id="services">
             <div class="container text-center">
                 <h3>OUR SERVICES</h3><hr/>
                 <div class="row">
                     <div class="col-md-2 col-sm-2">
                         <img src="images/Rectangle-6.png">
-                        <h4>Lorem Ipsum</h4>
+                        <h5>Lorem Ipsum</h5>
                         <a href="/service/AC service" class="btn btn-primary btn-large">Book Now</a>
                     </div>
+                      <div class="col-md-2 col-sm-2">
+                        <img src="images/Rectangle-6.png">
+                        <h5>Lorem Ipsum</h5>
+                        <a href="/service/AC service" class="btn btn-primary btn-large">Book Now</a>
+                    </div>
+                   
                      <div class="col-md-2 col-sm-2">
                         <img src="images/Rectangle-6.png">
-                        <h4>Lorem Ipsum</h4>
-                        <a href="/service/Fridge" class="btn btn-primary btn-large">Book Now</a>
+                        <h5>Lorem Ipsum</h5>
+                        <a href="/service/AC service" class="btn btn-primary btn-large">Book Now</a>
                     </div>
-                    
+                   
                      <div class="col-md-2 col-sm-2">
                         <img src="images/Rectangle-6.png">
-                        <h4>Lorem Ipsum</h4>
-                        <a href="/service/Cleaning" class="btn btn-primary btn-large">Book Now</a>
+                        <h5>Lorem Ipsum</h5>
+                        <a href="/service/AC service" class="btn btn-primary btn-large">Book Now</a>
                     </div>
+                   
                      <div class="col-md-2 col-sm-2">
                         <img src="images/Rectangle-6.png">
-                        <h4>Lorem Ipsum</h4>
-                        <a href="/service/lorem" class="btn btn-primary btn-large">Book Now</a>
+                        <h5>Lorem Ipsum</h5>
+                        <a href="/service/AC service" class="btn btn-primary btn-large">Book Now</a>
                     </div>
+                   
                      <div class="col-md-2 col-sm-2">
                         <img src="images/Rectangle-6.png">
-                        <h4>Lorem Ipsum</h4>
-                        <a href="/service/ipsuum" class="btn btn-primary btn-large">Book Now</a>
+                        <h5>Lorem Ipsum</h5>
+                        <a href="/service/AC service" class="btn btn-primary btn-large">Book Now</a>
                     </div>
-                     <div class="col-md-2 col-sm-2">
-                        <img src="images/Rectangle-6.png">
-                        <h4>Lorem Ipsum</h4>
-                        <a href="/service/donoo" class="btn btn-primary btn-large">Book Now</a>
-                    </div>
+                   
+                   
                 </div>
             </div>
         </div>
@@ -201,10 +162,10 @@
               </div>
               <div class="col-md-3">
                   <h4>ABOUT</h4>
-                 <a href="" >About Us</a><br>
-                 <a href="" > How it works</a><br>
-                 <a href="" >Terms And Conditions</a><br>
-                 <a href="" >Join Us</a><br>
+                 <a href="/about" >About Us</a><br>
+                 <a href="/works" > How it works</a><br>
+                 <a href="/terms" >Terms And Conditions</a><br>
+                 <a href="/join" >Join Us</a><br>
             
               </div>
               <div class="col-md-3">
@@ -213,20 +174,9 @@
                 <a href="" >info@advazon.com</a><br>
               </div>
               <div class="col-md-3">
-                  <a href="" class="btn btn-large">PATNER WITH US</a>
+                  <a href="/join" class="btn btn-large">PATNER WITH US</a>
               </div>
           </div>
       </div>
       
-      <footer>
-        <p>&copy; Company 2016</p>
-      </footer>
-     <!-- /container -->      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-
-        <script src="js/main.js"></script>
-         <script src="js/parallax.js"></script>
-       
-    </body>
-</html>
+ <% include partials/footer %>

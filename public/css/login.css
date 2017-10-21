@@ -1,111 +1,116 @@
-body{
-    
-
-background: #D31027; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #D31027 , #EA384D); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #D31027 , #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
+body {
+    background: #efefef;
 }
+
 div.tabbed-menu {
-  font-family: verdana;
-  font-size: 15px;
+    font-family: verdana;
+    font-size: 15px;
     background: #fff;
-width:40%;
-  margin: 50px auto;
-  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    width: 40%;
+    margin: 50px auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
 
 ul.tabs {
-  text-align: center;
-  list-style: none;
-  position: relative;
-  margin-top: 20px;
-  padding: 0;
-  line-height: 26px;
+    text-align: center;
+    list-style: none;
+    position: relative;
+    margin-top: 20px;
+    padding: 0;
+    line-height: 26px;
 }
 
 ul.tabs li {
-  padding: 10px 15px;
-  background: rgba(0,0,0,0.4);
-  display: inline-block;
-  color: #fff;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    color: #fff;
     margin-top: 20px;
-  width: 22.91%;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  font-size: 1.1em;
-  text-shadow: 0 1px 0 rgba(255,255,255,.15);
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+    width: 22.91%;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    font-size: 1.1em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .15);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
 
 ul.tabs li.selected {
-  background: #b300b3;
-  border-bottom-color: transparent;
-  color: #fff;
-/*  text-shadow: 0 1px 0 rgba(0,0,0,.75);*/
+    background: #b300b3;
+    border-bottom-color: transparent;
+    color: #fff;
+    /*  text-shadow: 0 1px 0 rgba(0,0,0,.75);*/
 }
 
 ul.tabs li:hover {
-  cursor: pointer;
-  background: #f4c368;
+    cursor: pointer;
+    background: #f4c368;
 }
 
 ul.tabs li.selected:hover {
-  background: #f4c368;
+    background: #f4c368;
 }
 
 div.page {
-  text-align: center;
+    text-align: center;
 }
 
 div.page li {
-  text-align: left;
-  list-style-type: none;
-}
-div.content {
-  padding: 10px 20px;
-}
-div.content p {
-  padding:0;
-  margin:0;
-  text-align: left;
-  line-height: 1.4em;
-  text-shadow: 0 1px 0 rgba(0,0,0,.75);
-}
-div.contentWrapper{
-  background: regba(155,151,155,0.4);
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+    text-align: left;
+    list-style-type: none;
 }
 
+div.content {
+    padding: 10px 20px;
+}
+
+div.content p {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    line-height: 1.4em;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .75);
+}
+
+div.contentWrapper {
+    background: regba(155, 151, 155, 0.4);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
 
 .btn-primary {
-  background-image: none; }
-a{
+    background-image: none;
+}
+
+a {
     text-decoration: none;
 }
+
 .btn-large {
-  border: none;
-  border-radius: 0px;
-  padding: 10px 20px;
-  color: #fff;
-  background: #b300b3;
-  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.3);
-  transition: background 0.5s;
-  margin: 15px 0;
+    border: none;
+    border-radius: 0px;
+    padding: 10px 20px;
+    color: #fff;
+    background: #b300b3;
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.3);
+    transition: background 0.5s;
+    margin: 15px 0;
 }
-  .btn-large:hover, .btn-large :focus {
+
+.btn-large:hover,
+.btn-large :focus {
     background-color: #f4c368;
-    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.3); }
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.3);
+}
 
 input.form-control {
-  border-radius: 0px;
-  padding: 20px;
+    border-radius: 0px;
+    padding: 10px;
     text-align: center;
-   width: 70%;
-  border: 2px solid #b4cbc7;
-  margin: 20px 15%; }
+    width: 60%;
+    border: 2px solid #b4cbc7;
+    margin: 20px 15%;
+}
